@@ -218,3 +218,42 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Byte-compiled / optimized / virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# Large Language Model Weights & Artifacts (КРИТИЧНО)
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+*.onnx
+models/
+weights/
+checkpoints/
+
+# Datasets and cache
+huggingface/
+.cache/
+data/cache/
+
+# Experiment outputs & local logs
+results/raw_logs/*
+!results/raw_logs/.gitkeep
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / OS specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
