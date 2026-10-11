@@ -1,0 +1,17 @@
+# Предварительный список. После настройки окружения на неделе 1
+# зафиксировать версии: pip freeze > requirements.txt
+
+# Инференс
+llama-cpp-python      # GGUF: Q8_0, Q4_K_M, Q2_K
+transformers          # FP16/BF16, AWQ, GPTQ
+torch
+huggingface_hub       # скачивание сборок
+
+# Замеры ресурсов
+psutil                # RAM
+nvidia-ml-py          # VRAM (только NVIDIA)
+
+# Обработка результатов
+pyyaml
+pandas
+matplotlib
