@@ -1,0 +1,44 @@
+models:
+  - name: qwen2.5-1.5b
+    hf_base: Qwen/Qwen2.5-1.5B-Instruct
+  - name: qwen2.5-3b
+    hf_base: Qwen/Qwen2.5-3B-Instruct
+  - name: qwen2.5-7b
+    hf_base: Qwen/Qwen2.5-7B-Instruct
+
+quantizations:
+  - name: fp16
+    backend: transformers
+    repo_suffix: ""
+  - name: q8_0
+    backend: llama.cpp
+    repo_suffix: "-GGUF"
+    file_tag: q8_0
+  - name: q4_k_m
+    backend: llama.cpp
+    repo_suffix: "-GGUF"
+    file_tag: q4_k_m
+  - name: q2_k            # суб 3bit
+    backend: llama.cpp
+    repo_suffix: "-GGUF"
+    file_tag: q2_k
+  - name: awq
+    backend: transformers
+    repo_suffix: "-AWQ"
+  - name: gptq-int4
+    backend: transformers
+    repo_suffix: "-GPTQ-Int4"
+
+generation:
+  temperature: 0.0
+  max_new_tokens: 512
+  seed: 42
+
+runs:
+  repeats: 3              # ретраи для замеров производительности
+
+criteria:
+  - text_quality          # фактология, связность, галлюцинации
+  - controllability       # JSON, ролевые сценарии, негативные ограничения
+  - performance           # tps, TTFT
+  - resources             # пиковые vram и ram
