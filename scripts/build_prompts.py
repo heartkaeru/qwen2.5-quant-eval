@@ -172,8 +172,8 @@ FACTS = [
 
 
 def build_facts():
-    for prompt, expected, difficulty, source in FACTS:
-        add_auto("facts", "fact", prompt, expected, difficulty, source=source)
+    for prompt, expected, difficulty, _topic in FACTS:
+        add_auto("facts", "fact", prompt, expected, difficulty, source="fact type")
 
 
 LOGIC = [
@@ -249,7 +249,7 @@ LOGIC = [
 
 def build_logic():
     for prompt, expected, difficulty in LOGIC:
-        add_auto("logic", "logic", prompt, expected, difficulty, source="составная задача")
+        add_auto("logic", "logic", prompt, expected, difficulty, source="logic type")
 
 
 GROUNDING = [
@@ -366,7 +366,7 @@ def build_grounding():
     tail = " Если в тексте нет ответа, напиши ровно «нет данных»."
     for passage, question, expected, difficulty in GROUNDING:
         prompt = f"Используй только текст: «{passage}». {question}{tail}"
-        add_auto("grounding", "ground", prompt, expected, difficulty, source="синтетический текст")
+        add_auto("grounding", "ground", prompt, expected, difficulty, source="grounding type")
 
 
 ROLES = [
@@ -463,7 +463,7 @@ ROLES = [
 
 def build_roles():
     for prompt, expected, difficulty in ROLES:
-        add_auto("role", "role", prompt, expected, difficulty, source="ролевой сценарий")
+        add_auto("role", "role", prompt, expected, difficulty, source="role type")
 
 
 TEXT = [
@@ -537,7 +537,7 @@ TEXT = [
 def build_text():
     for prompt, rubric, difficulty in TEXT:
         add("text_quality", "text", prompt, check="manual", rubric=rubric,
-            difficulty=difficulty, source="ручная рубрика")
+            difficulty=difficulty, source="handmade type")
 
 
 RU2EN = {
@@ -637,7 +637,7 @@ def build_math():
 
     def ex(prompt, value, difficulty):
         add("math", "math", prompt, check="exact", expected=str(value),
-            difficulty=difficulty, source="сгенерировано")
+            difficulty=difficulty, source="gen")
 
     def fill(count, factory):
         made = 0
@@ -836,7 +836,7 @@ def build_json():
 
     def ex(prompt, expected, difficulty):
         add("json", "json", prompt, check="json", expected=expected,
-            difficulty=difficulty, source="сгенерировано")
+            difficulty=difficulty, source="gen")
 
     def fill(count, factory):
         made = 0
@@ -955,7 +955,7 @@ def build_instructions():
 
     def ex(prompt, expected, difficulty):
         add("instructions", "instr", prompt, check="exact", expected=expected,
-            difficulty=difficulty, source="сгенерировано")
+            difficulty=difficulty, source="gen")
 
     def fill(count, factory):
         made = 0
