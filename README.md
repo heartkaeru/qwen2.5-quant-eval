@@ -38,6 +38,22 @@
 * **Сырые результаты руками не правим** — таблицы и графики пересобираются из `results/raw_logs/` скриптом.
 * **Каждый прогон записывает свои условия** — модель, квантизация, сид, параметры генерации, версия бэкенда и железо пишутся в тот же файл, что и результат.
 
+## Оптимизация и проверка качества (llama.cpp)
+
+Скрипт сохраняет реальные замеры и ответы по каждому профилю в `results/raw_logs/`. Для трёх готовых профилей с JSON-кейсами:
+
+```bash
+python scripts/test_optimization.py --model-path models/qwen2.5-3b-q4_k_m.gguf --profiles baseline aggressive aggressive_q4 --cases-jsonl data/quality_cases.jsonl
+```
+
+Чтобы изолировать влияние типа KV-кэша, запустите согласованное сравнение FP16/Q8_0/Q4_0 при общем контексте 1024 и включённом FlashAttention:
+
+```bash
+python scripts/test_optimization.py --model-path models/qwen2.5-3b-q4_k_m.gguf --kv-ablation-context 1024 --cases-jsonl data/quality_cases.jsonl
+```
+
+Mock-режим не создаёт файлы результатов. Пошаговая проверка CUDA и Tesla T4 описана в [notes/colab_t4.md](notes/colab_t4.md); зафиксированная методика — в [notes/methodology.md](notes/methodology.md).
+
 ## Установка
 
 ```bash
