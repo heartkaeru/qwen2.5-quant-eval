@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Средний ручной балл по режимам">
+<rect width="960" height="600" fill="white"/>
+<text x="480" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="bold" fill="#111">Средний ручной балл по режимам</text>
+<text x="480" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#444">Qwen2.5-1.5B-Instruct · оценка по четырём критериям, максимум 4 балла</text>
+<line x1="110" y1="490.0" x2="850" y2="490.0" stroke="#d9d9d9" stroke-width="1"/>
+<text x="88" y="495.0" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#333">0</text>
+<line x1="110" y1="398.8" x2="850" y2="398.8" stroke="#d9d9d9" stroke-width="1"/>
+<text x="88" y="403.8" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#333">1</text>
+<line x1="110" y1="307.5" x2="850" y2="307.5" stroke="#d9d9d9" stroke-width="1"/>
+<text x="88" y="312.5" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#333">2</text>
+<line x1="110" y1="216.2" x2="850" y2="216.2" stroke="#d9d9d9" stroke-width="1"/>
+<text x="88" y="221.2" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#333">3</text>
+<line x1="110" y1="125.0" x2="850" y2="125.0" stroke="#d9d9d9" stroke-width="1"/>
+<text x="88" y="130.0" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#333">4</text>
+<line x1="110" y1="125" x2="110" y2="490" stroke="#333"/>
+<line x1="110" y1="490" x2="850" y2="490" stroke="#333"/>
+<rect x="175" y="230.5" width="110" height="259.5" fill="#4c72b0"/>
+<text x="230" y="218.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#111">2,84</text>
+<text x="230" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">FP16</text>
+<rect x="425" y="236.2" width="110" height="253.8" fill="#4c72b0"/>
+<text x="480" y="224.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#111">2,78</text>
+<text x="480" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">INT8</text>
+<rect x="675" y="230.5" width="110" height="259.5" fill="#4c72b0"/>
+<text x="730" y="218.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#111">2,84</text>
+<text x="730" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">NF4</text>
+<text x="480" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#444">32 вручную оценённых ответа на каждый режим</text>
+</svg>
